@@ -1,43 +1,34 @@
-// // TODO 1: declare `type Shape` as a discriminated union with two variants:
-// //         a circle (kind 'circle', numeric radius) and a square
-// //         (kind 'square', numeric side).
+// TODO 1: declare `type Status` as the union of the four status strings.
 
-// // TODO 2: write `function area(s: Shape): number` that switches on s.kind
-// //         and returns the area of each variant. Math.PI is built in.
+// TODO 2: write `function describe(s: Status): string` — switch on s and
+//         return the message that belongs to each status.
 
-// const readline = require("readline")
-// const rl = readline.createInterface({ input: process.stdin })
-// const lines: string[] = []
-// let expected = -1
-
-// rl.on("line", (line: string) => {
-// 	if(expected === -1) {
-// 		expected = parseInt(line)
-// 		if(expected === 0) rl.close()
-// 		return
-// 	}
-// 	lines.push(line)
-// 	if(lines.length === expected) {
-// 		for(const l of lines) {
-// 			const [letter, value] = l.split(' ')
-// 			const n = parseFloat(value as string)
-// 			// TODO 3: build the Shape this line describes ('c' means circle,
-// 			//         's' means square) and print its area to two decimals.
-// 			if(letter === 'c') {
-// 				console.log((Math.PI * (n * n)).toFixed(2))
-// 			}
-// 			else {
-// 				console.log((n * n).toFixed(2))
-// 			}
-// 		}
-// 		rl.close()
-// 	}
-// })
-// rl.on("close", () => process.exit(0))
-
-
-console.log(`union: type
-merging: interface
-recursive: both
-class implements: interface
-`)
+const readline = require("readline")
+const rl = readline.createInterface({ input: process.stdin })
+rl.on("line", (line: string) => {
+	const valid = ['idle', 'loading', 'ready', 'error'] as const
+	const isStatus: boolean = valid.includes(line as any)
+	// TODO 3: when isStatus is true, print what describe returns for this
+	//         line (assert it with `line as Status`); otherwise print 'unknown'.
+	if(isStatus) {
+		switch(line) {
+			case 'idle':
+				console.log("waiting")
+				break
+			case 'loading':
+				console.log("please wait")
+				break
+			case 'ready':
+				console.log("done")
+				break
+			case 'error':
+				console.log("try again")
+				break
+		}
+	}
+	else {
+		console.log("unknown")
+	}
+	rl.close()
+})
+rl.on("close", () => process.exit(0))
