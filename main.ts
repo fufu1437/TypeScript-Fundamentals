@@ -1,9 +1,3 @@
-const lines: string[] = require('fs').readFileSync(0, 'utf-8').trim().split('\n')
+const word: string = require('fs').readFileSync(0, 'utf-8').trim()
 
-let buf: number = 0
-
-for(const v of lines) {
-	buf += Number(v)
-}
-
-console.log(Math.floor(buf / 3))
+console.log(word.split('').reverse().join(''))
