@@ -10,7 +10,7 @@
 		"type": "git",
 		"url": "git+https://github.com/fufu1437/TypeScript-Fundamentals.git"
 	},
-	"type": "module",
+	"type": "commonjs",
 	"main": "index.js",
 	"directories": {
 		"test": "tests"

@@ -1,14 +1,9 @@
-import * as readline from 'readline'
-async function main() {
+const lines: string[] = require('fs').readFileSync(0, 'utf-8').trim().split('\n')
 
-	const rl = readline.createInterface({ input: process.stdin })
+let buf: number = 0
 
-	const buf: string[] = []
-
-	for await(const line of rl) {
-		buf.push(line)
-	}
-	console.log(Number(buf[0]) + Number(buf[1]))
+for(const v of lines) {
+	buf += Number(v)
 }
 
-main()
+console.log(Math.floor(buf / 3))
