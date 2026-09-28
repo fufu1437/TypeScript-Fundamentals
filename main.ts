@@ -9,3 +9,6 @@ else if(n % 5 === 0) {
 else if(n % 3 === 0) {
 	console.log("Fizz")
 }
+else {
+	console.log(n)
+}
