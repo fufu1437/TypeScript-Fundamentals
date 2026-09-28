@@ -1,0 +1,24 @@
+{
+	"name": "typescript-fundamentals",
+	"version": "1.0.0",
+	"description": "[![shipthatcode — TypeScript Fundamentals](https://api.shipthatcode.com/cert/07469d7ccc573e22534d4bd3c1cac7a5.svg)](https://shipthatcode.com/courses/typescript-fundamentals)",
+	"homepage": "https://github.com/fufu1437/TypeScript-Fundamentals#readme",
+	"bugs": {
+		"url": "https://github.com/fufu1437/TypeScript-Fundamentals/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fufu1437/TypeScript-Fundamentals.git"
+	},
+	"type": "module",
+	"main": "index.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@types/node": "^26.6.3"
+	}
+}
